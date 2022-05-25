@@ -15,6 +15,9 @@
   --footer-background-color: #2f303a;
   --button-background-color: #f5f4fa;
   --gallery-border-color: #eeeeee;
+  --hero-gradient: rgba(47, 48, 58, 0.4);
+  --hero-gradient1: rgba(255, 0, 0, 0.2);
+  --hero-gradient2: rgba(0, 255, 0, 0.2);
 }
 h3,
 p {
@@ -133,14 +136,32 @@ body {
 .footer-adress.link:focus {
   color: var(--accent-color);
 }
+.icon-tel {
+  width: 10px;
+  height: 16px;
+  fill: currentColor;
+  margin-right: 10px;
+}
+.icon-email {
+  width: 16px;
+  height: 12px;
+  fill: currentColor;
+  margin-right: 10px;
+}
 /* ==========================HERO======================= */
 /* hero sections style */
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
 
+  max-height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--footer-background-color);
-  background-image: url('../images/squoosh_hero-Img.jpg');
+  background-image: linear-gradient(to right, var(--hero-gradient), var(--hero-gradient)),
+    url('../images/squoosh_hero-Img.jpg');
+
   text-align: center;
   letter-spacing: 0.06em;
 }
@@ -238,6 +259,31 @@ button {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+.benefits-item::before {
+  display: block;
+  content: '';
+  width: 270px;
+  height: 120px;
+  background-color: var(--button-background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.details::before {
+  content: '';
+  background-image: url('../images/svg/antenna.svg');
+  background-size: 65px, 75px;
+}
+.punctuality::before {
+  content: '';
+  background-image: url('../images/svg/clock.svg');
+}
+.planing::before {
+  content: '';
+  background-image: url('../images/svg/diagram.svg');
 }
 /* =================== SPECIALIZATIO SECTION ====== */
 .specialization {
